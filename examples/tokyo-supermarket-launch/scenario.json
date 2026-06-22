@@ -1,0 +1,51 @@
+{
+  "scenario_id": "tokyo-frozen-protein-launch-v1",
+  "title": "Tokyo high-protein frozen meal launch",
+  "region": [
+    "tokyo-metropolitan"
+  ],
+  "category": [
+    "supermarket",
+    "frozen_food"
+  ],
+  "business_question": "Should a supermarket chain launch a high-protein, low-sugar frozen deli line in the Greater Tokyo market?",
+  "target_agents": {
+    "population_id": "tokyo-mvp-v1",
+    "selection_filters": [
+      "channel_preference in ['offline_first', 'hybrid']",
+      "category_preferences contains 'frozen_food'"
+    ],
+    "sample_size": 50
+  },
+  "product_or_service": {
+    "name": "Protein Deli Series",
+    "description": "A frozen deli series focused on high protein, low sugar, and quick weekday preparation.",
+    "price_options": [398, 498, 598],
+    "positioning": [
+      "high_protein",
+      "quick_prep",
+      "weekday_meal_support"
+    ]
+  },
+  "comparison_targets": [
+    "existing_frozen_meals",
+    "convenience_store_deli",
+    "meal_delivery_services"
+  ],
+  "evaluation_dimensions": [
+    "purchase_intent",
+    "price_sensitivity",
+    "channel_preference",
+    "objections"
+  ],
+  "assumptions": [
+    "Initial launch is limited to urban and suburban Tokyo stores.",
+    "Messaging combines health and time-saving benefits.",
+    "No large-scale loyalty promotion is active in the first month."
+  ],
+  "metadata": {
+    "created_at": "2026-06-22T00:00:00Z",
+    "author": "scaffold",
+    "version": "0.1.0"
+  }
+}

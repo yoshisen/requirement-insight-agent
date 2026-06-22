@@ -1,0 +1,23 @@
+model_provider = "anthropic"
+embedding_provider = "local"
+chat_model = "claude-3-5-sonnet-latest"
+embedding_model = "local-embedding-placeholder"
+temperature = 0.2
+max_tokens = 512
+request_timeout_seconds = 30.0
+max_retries = 2
+
+[routing]
+strategy = "single_provider"
+fallback_order = ["anthropic", "local"]
+enable_fallback = true
+
+[anthropic]
+enabled = false
+api_base = "https://api.anthropic.com"
+
+[local]
+chat_model = "local-chat-placeholder"
+embedding_model = "local-embedding-placeholder"
+embedding_dimensions = 8
+response_prefix = "[local]"

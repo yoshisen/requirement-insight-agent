@@ -1,0 +1,10 @@
+pipeline_id = "tokyo-mvp-v1"
+region = "tokyo-metropolitan"
+sample_size = 50
+rag_top_k = 5
+aggregation_mode = "segment_summary"
+demand_mode = "scenario_range"
+
+[population]
+population_config_id = "tokyo-mvp-v1"
+seed = 42

@@ -1,0 +1,12 @@
+scenario_id = "tokyo-frozen-protein-launch-v1"
+title = "Tokyo high-protein frozen meal launch"
+region = ["tokyo-metropolitan"]
+category = ["supermarket", "frozen_food"]
+
+[target_agents]
+population_id = "tokyo-mvp-v1"
+sample_size = 50
+
+[product]
+name = "Protein Deli Series"
+description = "A frozen deli line for high-protein, low-sugar, quick weekday meals."

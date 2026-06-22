@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoshisen.github.io/requirement-insight-agent/schemas/scenario.schema.json",
+  "title": "ScenarioDefinition",
+  "description": "Business scenario contract used to drive retrieval, agent execution, aggregation, and demand estimation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "scenario_id",
+    "title",
+    "region",
+    "category",
+    "business_question",
+    "target_agents",
+    "product_or_service",
+    "evaluation_dimensions",
+    "assumptions",
+    "metadata"
+  ],
+  "properties": {
+    "scenario_id": { "type": "string" },
+    "title": { "type": "string" },
+    "region": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "category": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "business_question": { "type": "string" },
+    "product_or_service": {
+      "$ref": "#/$defs/product_or_service"
+    },
+    "comparison_targets": {
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    },
+    "target_agents": {
+      "$ref": "#/$defs/target_agents"
+    },
+    "evaluation_dimensions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "assumptions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "constraints": {
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    },
+    "scenario_variants": {
+      "type": ["array", "null"],
+      "items": { "$ref": "#/$defs/scenario_variant" }
+    },
+    "metadata": {
+      "$ref": "#/$defs/scenario_metadata"
+    }
+  },
+  "$defs": {
+    "target_agents": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["population_id", "sample_size"],
+      "properties": {
+        "population_id": { "type": "string" },
+        "selection_filters": {
+          "oneOf": [
+            {
+              "type": "object",
+              "additionalProperties": true
+            },
+            {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          ],
+          "default": {}
+        },
+        "sample_size": { "type": "integer", "minimum": 1 }
+      }
+    },
+    "product_or_service": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "description", "price_options", "positioning"],
+      "properties": {
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price_options": {
+          "type": "array",
+          "items": { "type": "number" },
+          "minItems": 1
+        },
+        "positioning": {
+          "oneOf": [
+            { "type": "string" },
+            { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+          ]
+        }
+      }
+    },
+    "scenario_variant": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["variant_id", "label", "changes"],
+      "properties": {
+        "variant_id": { "type": "string" },
+        "label": { "type": "string" },
+        "changes": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "scenario_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_at", "created_by", "version"],
+      "properties": {
+        "created_at": { "type": "string", "format": "date-time" },
+        "created_by": { "type": "string" },
+        "version": { "type": "string" }
+      }
+    }
+  }
+}

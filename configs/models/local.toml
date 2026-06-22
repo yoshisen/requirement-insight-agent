@@ -1,0 +1,19 @@
+model_provider = "local"
+embedding_provider = "local"
+chat_model = "local-chat-placeholder"
+embedding_model = "local-embedding-placeholder"
+temperature = 0.0
+max_tokens = 256
+request_timeout_seconds = 5.0
+max_retries = 0
+
+[routing]
+strategy = "single_provider"
+fallback_order = ["local"]
+enable_fallback = false
+
+[local]
+chat_model = "local-chat-placeholder"
+embedding_model = "local-embedding-placeholder"
+embedding_dimensions = 8
+response_prefix = "[local]"

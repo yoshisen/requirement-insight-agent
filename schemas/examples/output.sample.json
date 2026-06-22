@@ -1,0 +1,134 @@
+{
+  "output_id": "output-001",
+  "scenario_id": "tokyo-supermarket-launch-001",
+  "population_id": "tokyo-mvp-v1",
+  "summary": {
+    "overall_takeaway": "単身・共働き層で関心が高いが、価格上昇で継続利用に懸念がある",
+    "top_reasons": [
+      "健康的",
+      "時短になる"
+    ],
+    "top_objections": [
+      "価格が高い",
+      "量が少ない可能性"
+    ]
+  },
+  "segment_summaries": [
+    {
+      "segment_key": "single_30s",
+      "segment_label": "30代単身",
+      "takeaway": "試用意向は高いが継続は価格次第",
+      "sample_size": 6,
+      "purchase_intent_distribution": {
+        "1": 0.0,
+        "2": 0.1,
+        "3": 0.2,
+        "4": 0.4,
+        "5": 0.3
+      },
+      "top_reasons": [
+        "健康的",
+        "調理が早い"
+      ],
+      "top_objections": [
+        "価格が高い"
+      ]
+    }
+  ],
+  "metrics": {
+    "mean_purchase_intent": 3.6,
+    "high_interest_ratio": 0.42
+  },
+  "uncertainty_summary": {
+    "overall_uncertainty": "medium",
+    "high_disagreement_segments": [
+      "family_with_children"
+    ],
+    "low_evidence_areas": [
+      "outer_suburban_stores"
+    ]
+  },
+  "citation_summary": [
+    {
+      "trace_id": "trace-001",
+      "source_ref": {
+        "datasource_id": "sample-market-note-001",
+        "document_id": "doc-001",
+        "chunk_id": "chunk-003"
+      },
+      "used_in": {
+        "scenario_id": "tokyo-supermarket-launch-001",
+        "output_id": "output-001"
+      },
+      "citation_text": "都市部単身層では時短・健康訴求の冷凍食品に一定の受容余地がある",
+      "relevance_score": 0.82,
+      "metadata": {
+        "retrieved_at": "2026-06-22T10:00:00Z",
+        "retrieval_method": "vector_search",
+        "region_filter": "tokyo-metropolitan",
+        "category_filter": "frozen_food"
+      }
+    }
+  ],
+  "explanation_trace": [
+    {
+      "step_id": "step-001",
+      "kind": "evidence",
+      "statement": "都市部単身層では健康・時短訴求が比較的受容されやすい。",
+      "citation_trace_ids": [
+        "trace-001"
+      ],
+      "confidence": "medium"
+    }
+  ],
+  "demand_estimation": {
+    "estimation_id": "demand-001",
+    "input_ref": {
+      "aggregation_id": "agg-001",
+      "population_id": "tokyo-mvp-v1"
+    },
+    "ranges": {
+      "conservative": {
+        "lower": 600,
+        "upper": 800,
+        "unit": "units_per_period"
+      },
+      "base": {
+        "lower": 900,
+        "upper": 1200,
+        "unit": "units_per_period"
+      },
+      "optimistic": {
+        "lower": 1300,
+        "upper": 1700,
+        "unit": "units_per_period"
+      }
+    },
+    "assumptions": [
+      "初期販促は限定的",
+      "健康訴求が一定程度伝わる"
+    ],
+    "risk_factors": [
+      "価格感度が高い層で継続利用不確実",
+      "実データ校正がまだ不十分"
+    ],
+    "segment_sensitivity": [
+      {
+        "segment_key": "single_30s",
+        "note": "398円と498円で反応差が大きい"
+      }
+    ],
+    "confidence": "medium",
+    "warnings": [
+      "これは deterministic forecast ではない"
+    ],
+    "metadata": {
+      "generated_at": "2026-06-22T10:00:00Z"
+    }
+  },
+  "metadata": {
+    "generated_at": "2026-06-22T10:00:00Z",
+    "generator_version": "0.1.0",
+    "prompt_spec_id": "supermarket-launch-survey-v1"
+  }
+}

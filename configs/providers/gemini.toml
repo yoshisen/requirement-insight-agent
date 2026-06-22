@@ -1,0 +1,8 @@
+provider_name = "gemini"
+default_chat_model = "gemini-2.0-flash"
+default_embedding_model = "text-embedding-004"
+base_url = "https://generativelanguage.googleapis.com"
+timeout_seconds = 30
+max_retries = 2
+supports_chat = true
+supports_embeddings = true

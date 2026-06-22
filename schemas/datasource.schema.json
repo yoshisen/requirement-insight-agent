@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoshisen.github.io/requirement-insight-agent/schemas/datasource.schema.json",
+  "title": "DataSourceMetadata",
+  "description": "Metadata contract for all datasets used by the project. License, allowed_use, and provenance are required to keep ingestion auditable.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "datasource_id",
+    "source_name",
+    "source_type",
+    "license_type",
+    "allowed_use",
+    "retrieved_at",
+    "coverage_region",
+    "quality_score",
+    "provenance"
+  ],
+  "properties": {
+    "datasource_id": {
+      "type": "string",
+      "examples": ["tokyo-household-sample-001"]
+    },
+    "source_name": { "type": "string" },
+    "source_type": {
+      "type": "string",
+      "enum": ["government_statistics", "geospatial", "product_catalog", "survey_results", "market_notes", "internal_notes"]
+    },
+    "source_url": { "type": ["string", "null"], "format": "uri-reference" },
+    "license_type": {
+      "type": "string",
+      "enum": ["public", "cc-by", "internal", "restricted", "unknown"]
+    },
+    "allowed_use": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "retrieved_at": { "type": "string", "format": "date-time" },
+    "coverage_region": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "coverage_time": { "type": ["string", "null"] },
+    "language": { "type": ["string", "null"] },
+    "format": {
+      "type": ["string", "null"],
+      "enum": ["csv", "json", "md", "txt", null]
+    },
+    "quality_score": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0
+    },
+    "known_biases": {
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    },
+    "provenance": {
+      "$ref": "#/$defs/provenance"
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["collected_by", "collected_method"],
+      "properties": {
+        "collected_by": { "type": "string" },
+        "collected_method": { "type": "string" },
+        "notes": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

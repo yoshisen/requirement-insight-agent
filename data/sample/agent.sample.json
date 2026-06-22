@@ -1,0 +1,29 @@
+{
+  "agent_id": "tokyo-agent-0001",
+  "region": "tokyo-metropolitan",
+  "age_band": "30s",
+  "household_composition": "single",
+  "income_band": "middle",
+  "channel_preference": "hybrid",
+  "price_sensitivity": "medium",
+  "category_preferences": [
+    "frozen_food",
+    "healthy_food"
+  ],
+  "uncertainty_profile": {
+    "profile_confidence": "medium",
+    "preference_uncertainty": "medium",
+    "category_familiarity": "high"
+  },
+  "response_style": {
+    "verbosity": "medium",
+    "directness": "medium",
+    "confidence_expression": "cautious"
+  },
+  "metadata": {
+    "generated_at": "2026-06-22T10:00:00Z",
+    "generator_version": "0.1.0",
+    "population_config_id": "tokyo-mvp-v1",
+    "seed": 42
+  }
+}

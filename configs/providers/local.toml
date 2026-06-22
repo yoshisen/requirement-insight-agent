@@ -1,0 +1,8 @@
+provider_name = "local"
+default_chat_model = "local-chat-placeholder"
+default_embedding_model = "local-embedding-placeholder"
+timeout_seconds = 5
+max_retries = 0
+supports_chat = true
+supports_embeddings = true
+embedding_dimension = 8

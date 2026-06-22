@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoshisen.github.io/requirement-insight-agent/schemas/agent.schema.json",
+  "title": "SyntheticConsumerAgent",
+  "description": "Population-aligned synthetic consumer agent. The schema intentionally avoids real-person identity fields and only permits modeled traits described in docs/schema-spec.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "agent_id",
+    "region",
+    "age_band",
+    "household_composition",
+    "income_band",
+    "channel_preference",
+    "price_sensitivity",
+    "category_preferences",
+    "uncertainty_profile",
+    "response_style",
+    "metadata"
+  ],
+  "properties": {
+    "agent_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique synthetic agent identifier.",
+      "examples": ["tokyo-agent-0001"]
+    },
+    "region": {
+      "type": "string",
+      "minLength": 1,
+      "examples": ["tokyo-metropolitan"]
+    },
+    "catchment_area": {
+      "type": ["string", "null"],
+      "description": "Optional finer living/trading area label."
+    },
+    "age_band": {
+      "type": "string",
+      "enum": ["20s", "30s", "40s", "50s", "60_plus"]
+    },
+    "household_composition": {
+      "type": "string",
+      "enum": ["single", "couple", "family_with_children", "elderly_household"]
+    },
+    "life_stage": {
+      "type": ["string", "null"],
+      "examples": ["early_career", "child_raising"]
+    },
+    "income_band": {
+      "type": "string",
+      "enum": ["low", "lower_middle", "middle", "upper_middle", "high"]
+    },
+    "occupation_style": {
+      "type": ["string", "null"]
+    },
+    "mobility_pattern": {
+      "type": ["string", "null"]
+    },
+    "channel_preference": {
+      "type": "string",
+      "enum": ["offline_first", "online_first", "hybrid"]
+    },
+    "price_sensitivity": {
+      "type": "string",
+      "enum": ["low", "medium", "high"]
+    },
+    "shopping_mission_types": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "category_preferences": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "category_aversions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "brand_loyalty_tendency": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "novelty_seeking": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "basket_size_tendency": {
+      "type": ["string", "null"],
+      "enum": ["small", "medium", "large", null]
+    },
+    "impulse_purchase_tendency": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "planning_tendency": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "digital_literacy": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "health_orientation": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "eco_orientation": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "convenience_orientation": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "risk_aversion": {
+      "type": ["string", "null"],
+      "enum": ["low", "medium", "high", null]
+    },
+    "constraints": {
+      "$ref": "#/$defs/constraints"
+    },
+    "rationale_memory": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/memory_entry" },
+      "default": []
+    },
+    "grounding_context_refs": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "worldview_tags": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "uncertainty_profile": {
+      "$ref": "#/$defs/uncertainty_profile"
+    },
+    "response_style": {
+      "$ref": "#/$defs/response_style"
+    },
+    "metadata": {
+      "$ref": "#/$defs/agent_metadata"
+    }
+  },
+  "$defs": {
+    "uncertainty_profile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["profile_confidence", "preference_uncertainty", "category_familiarity"],
+      "properties": {
+        "profile_confidence": { "type": "string", "enum": ["low", "medium", "high"] },
+        "preference_uncertainty": { "type": "string", "enum": ["low", "medium", "high"] },
+        "category_familiarity": { "type": "string", "enum": ["low", "medium", "high"] }
+      }
+    },
+    "response_style": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["verbosity", "directness", "confidence_expression"],
+      "properties": {
+        "verbosity": { "type": "string", "enum": ["low", "medium", "high"] },
+        "directness": { "type": "string", "enum": ["low", "medium", "high"] },
+        "confidence_expression": { "type": "string", "enum": ["cautious", "balanced", "assertive"] }
+      }
+    },
+    "constraints": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "budget_constraints": { "type": ["string", "null"] },
+        "time_constraints": { "type": ["string", "null"] },
+        "storage_constraints": { "type": ["string", "null"] },
+        "access_constraints": { "type": ["string", "null"] },
+        "local_competition_context": { "type": ["string", "null"] }
+      }
+    },
+    "memory_entry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["memory_id", "statement"],
+      "properties": {
+        "memory_id": { "type": "string" },
+        "statement": { "type": "string" },
+        "source": { "type": ["string", "null"] },
+        "confidence": { "type": ["string", "null"], "enum": ["low", "medium", "high", null] }
+      }
+    },
+    "agent_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generated_at", "generator_version", "population_config_id", "seed"],
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "generator_version": { "type": "string" },
+        "population_config_id": { "type": "string" },
+        "seed": { "type": ["integer", "null"] },
+        "synthetic_profile": { "type": "boolean", "default": true },
+        "notes": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

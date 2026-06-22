@@ -1,0 +1,3 @@
+area_id,area_name,area_type,station_access,household_pattern,note
+tokyo-central,Tokyo Central,urban_high_density,rail_hub,single_and_dual_income,"High convenience orientation and strong time-saving demand"
+tokyo-west-suburban,Tokyo West Suburban,suburban_family,rail_plus_bike,family_with_children,"Family shopping trips and value sensitivity are more visible"

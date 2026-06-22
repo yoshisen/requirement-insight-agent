@@ -1,0 +1,235 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoshisen.github.io/requirement-insight-agent/schemas/output.schema.json",
+  "title": "ScenarioOutputBundle",
+  "description": "Structured output bundle containing aggregated scenario insights, optional demand estimation, citation summary, uncertainty summary, and explanation traces.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "output_id",
+    "scenario_id",
+    "population_id",
+    "summary",
+    "segment_summaries",
+    "metrics",
+    "uncertainty_summary",
+    "citation_summary",
+    "explanation_trace",
+    "metadata"
+  ],
+  "properties": {
+    "output_id": { "type": "string" },
+    "scenario_id": { "type": "string" },
+    "population_id": { "type": "string" },
+    "summary": {
+      "$ref": "#/$defs/summary"
+    },
+    "segment_summaries": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/segment_summary" }
+    },
+    "metrics": {
+      "$ref": "#/$defs/metrics"
+    },
+    "uncertainty_summary": {
+      "$ref": "#/$defs/uncertainty_summary"
+    },
+    "citation_summary": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/citation_trace" }
+    },
+    "explanation_trace": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/explanation_trace_step" }
+    },
+    "demand_estimation": {
+      "oneOf": [
+        { "$ref": "#/$defs/demand_estimation" },
+        { "type": "null" }
+      ],
+      "default": null
+    },
+    "metadata": {
+      "$ref": "#/$defs/output_metadata"
+    }
+  },
+  "$defs": {
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overall_takeaway", "top_reasons", "top_objections"],
+      "properties": {
+        "overall_takeaway": { "type": "string" },
+        "top_reasons": { "type": "array", "items": { "type": "string" } },
+        "top_objections": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "segment_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["segment_key", "segment_label", "takeaway", "sample_size"],
+      "properties": {
+        "segment_key": { "type": "string" },
+        "segment_label": { "type": "string" },
+        "takeaway": { "type": "string" },
+        "sample_size": { "type": "integer", "minimum": 0 },
+        "purchase_intent_distribution": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "number"
+          }
+        },
+        "top_reasons": { "type": "array", "items": { "type": "string" } },
+        "top_objections": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "mean_purchase_intent": { "type": "number" },
+        "high_interest_ratio": { "type": "number" },
+        "price_sensitivity_summary": { "type": ["string", "object", "null"] },
+        "channel_preference_summary": { "type": ["string", "object", "null"] }
+      }
+    },
+    "uncertainty_summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["overall_uncertainty"],
+      "properties": {
+        "overall_uncertainty": { "type": "string", "enum": ["low", "medium", "high"] },
+        "high_disagreement_segments": { "type": "array", "items": { "type": "string" }, "default": [] },
+        "low_evidence_areas": { "type": "array", "items": { "type": "string" }, "default": [] }
+      }
+    },
+    "source_ref": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["datasource_id"],
+      "properties": {
+        "datasource_id": { "type": "string" },
+        "document_id": { "type": ["string", "null"] },
+        "chunk_id": { "type": ["string", "null"] }
+      }
+    },
+    "used_in": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scenario_id"],
+      "properties": {
+        "agent_id": { "type": ["string", "null"] },
+        "scenario_id": { "type": "string" },
+        "response_id": { "type": ["string", "null"] },
+        "output_id": { "type": ["string", "null"] }
+      }
+    },
+    "citation_trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id", "source_ref", "used_in", "citation_text", "metadata"],
+      "properties": {
+        "trace_id": { "type": "string" },
+        "source_ref": { "$ref": "#/$defs/source_ref" },
+        "used_in": { "$ref": "#/$defs/used_in" },
+        "citation_text": { "type": "string" },
+        "relevance_score": { "type": ["number", "null"], "minimum": 0.0, "maximum": 1.0 },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["retrieved_at", "retrieval_method"],
+          "properties": {
+            "retrieved_at": { "type": "string", "format": "date-time" },
+            "retrieval_method": { "type": "string" },
+            "region_filter": { "type": ["string", "null"] },
+            "category_filter": { "type": ["string", "null"] }
+          }
+        }
+      }
+    },
+    "explanation_trace_step": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["step_id", "kind", "statement"],
+      "properties": {
+        "step_id": { "type": "string" },
+        "kind": { "type": "string", "enum": ["evidence", "inference", "aggregation", "uncertainty"] },
+        "statement": { "type": "string" },
+        "citation_trace_ids": { "type": "array", "items": { "type": "string" }, "default": [] },
+        "confidence": { "type": ["string", "null"], "enum": ["low", "medium", "high", null] }
+      }
+    },
+    "range": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lower", "upper", "unit"],
+      "properties": {
+        "lower": { "type": "number" },
+        "upper": { "type": "number" },
+        "unit": { "type": "string" }
+      }
+    },
+    "demand_estimation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["estimation_id", "input_ref", "ranges", "assumptions", "risk_factors", "confidence", "metadata"],
+      "properties": {
+        "estimation_id": { "type": "string" },
+        "input_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["aggregation_id", "population_id"],
+          "properties": {
+            "aggregation_id": { "type": "string" },
+            "population_id": { "type": "string" }
+          }
+        },
+        "ranges": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["conservative", "base", "optimistic"],
+          "properties": {
+            "conservative": { "$ref": "#/$defs/range" },
+            "base": { "$ref": "#/$defs/range" },
+            "optimistic": { "$ref": "#/$defs/range" }
+          }
+        },
+        "assumptions": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "risk_factors": { "type": "array", "items": { "type": "string" } },
+        "segment_sensitivity": {
+          "type": ["array", "null"],
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["segment_key", "note"],
+            "properties": {
+              "segment_key": { "type": "string" },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "confidence": { "type": "string", "enum": ["low", "medium", "high"] },
+        "warnings": { "type": ["array", "null"], "items": { "type": "string" } },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["generated_at"],
+          "properties": {
+            "generated_at": { "type": "string", "format": "date-time" }
+          }
+        }
+      }
+    },
+    "output_metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generated_at", "generator_version"],
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "generator_version": { "type": "string" },
+        "prompt_spec_id": { "type": ["string", "null"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    }
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://yoshisen.github.io/requirement-insight-agent/schemas/evaluation.schema.json",
+  "title": "EvaluationRecord",
+  "description": "Evaluation and calibration record for populations, scenario runs, aggregations, or demand estimations.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evaluation_id",
+    "target_type",
+    "target_ref",
+    "metrics",
+    "findings",
+    "metadata"
+  ],
+  "properties": {
+    "evaluation_id": { "type": "string" },
+    "target_type": {
+      "type": "string",
+      "enum": ["population", "scenario_run", "aggregation", "demand_estimation"]
+    },
+    "target_ref": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "metrics": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "representativeness_score": { "type": ["number", "null"], "minimum": 0.0, "maximum": 1.0 },
+        "stability_score": { "type": ["number", "null"], "minimum": 0.0, "maximum": 1.0 },
+        "evidence_coverage_score": { "type": ["number", "null"], "minimum": 0.0, "maximum": 1.0 },
+        "bias_risk_level": { "type": ["string", "null"], "enum": ["low", "medium", "high", null] }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "calibration_recommendations": {
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    },
+    "benchmark_refs": {
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    },
+    "uncalibrated_areas": {
+      "type": ["array", "null"],
+      "items": { "type": "string" }
+    },
+    "uncertainty_monitoring": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "properties": {
+        "overall_uncertainty": { "type": ["string", "null"], "enum": ["low", "medium", "high", null] },
+        "disagreement_signals": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "citation_summary": {
+      "type": ["array", "null"],
+      "items": { "$ref": "#/$defs/citation_trace" }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["generated_at"],
+      "properties": {
+        "generated_at": { "type": "string", "format": "date-time" },
+        "evaluator_version": { "type": ["string", "null"] },
+        "notes": { "type": ["string", "null"] }
+      }
+    }
+  },
+  "$defs": {
+    "citation_trace": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trace_id", "source_ref", "used_in", "citation_text", "metadata"],
+      "properties": {
+        "trace_id": { "type": "string" },
+        "source_ref": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["datasource_id"],
+          "properties": {
+            "datasource_id": { "type": "string" },
+            "document_id": { "type": ["string", "null"] },
+            "chunk_id": { "type": ["string", "null"] }
+          }
+        },
+        "used_in": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["scenario_id"],
+          "properties": {
+            "agent_id": { "type": ["string", "null"] },
+            "scenario_id": { "type": "string" },
+            "response_id": { "type": ["string", "null"] },
+            "output_id": { "type": ["string", "null"] }
+          }
+        },
+        "citation_text": { "type": "string" },
+        "relevance_score": { "type": ["number", "null"], "minimum": 0.0, "maximum": 1.0 },
+        "metadata": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["retrieved_at", "retrieval_method"],
+          "properties": {
+            "retrieved_at": { "type": "string", "format": "date-time" },
+            "retrieval_method": { "type": "string" },
+            "region_filter": { "type": ["string", "null"] },
+            "category_filter": { "type": ["string", "null"] }
+          }
+        }
+      }
+    }
+  }
+}

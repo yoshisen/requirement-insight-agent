@@ -1,0 +1,38 @@
+{
+  "evaluation_id": "eval-001",
+  "target_type": "population",
+  "target_ref": {
+    "population_id": "tokyo-mvp-v1"
+  },
+  "metrics": {
+    "representativeness_score": 0.72,
+    "stability_score": 0.65,
+    "evidence_coverage_score": 0.68,
+    "bias_risk_level": "medium"
+  },
+  "findings": [
+    "単身層に比重がやや寄っている",
+    "地域差を十分に表現できていない可能性がある"
+  ],
+  "calibration_recommendations": [
+    "郊外ファミリー層のサンプル比率を増やす",
+    "地域別の商圏特徴を補強する"
+  ],
+  "benchmark_refs": [
+    "tokyo-household-benchmark-v1"
+  ],
+  "uncalibrated_areas": [
+    "outer_suburban_households"
+  ],
+  "uncertainty_monitoring": {
+    "overall_uncertainty": "medium",
+    "disagreement_signals": [
+      "高価格帯でセグメント間ばらつきが大きい"
+    ]
+  },
+  "metadata": {
+    "generated_at": "2026-06-22T10:00:00Z",
+    "evaluator_version": "0.1.0",
+    "notes": "MVP placeholder evaluation"
+  }
+}

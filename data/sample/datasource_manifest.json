@@ -1,0 +1,157 @@
+[
+  {
+    "source_path": "tokyo_regions.csv",
+    "loader_hint": "csv",
+    "title_field": "area_name",
+    "text_fields": [
+      "area_name",
+      "area_type",
+      "station_access",
+      "household_pattern",
+      "note"
+    ],
+    "tags": [
+      "region",
+      "tokyo"
+    ],
+    "metadata": {
+      "datasource_id": "tokyo-region-sample-001",
+      "source_name": "Tokyo Region Sample",
+      "source_type": "government_statistics",
+      "source_url": null,
+      "license_type": "public",
+      "allowed_use": [
+        "research",
+        "prototype"
+      ],
+      "retrieved_at": "2026-06-22T10:00:00Z",
+      "coverage_region": [
+        "tokyo-metropolitan"
+      ],
+      "coverage_time": "2026-Q1",
+      "language": "en",
+      "format": "csv",
+      "quality_score": 0.75,
+      "known_biases": [
+        "illustrative sample data"
+      ],
+      "provenance": {
+        "collected_by": "project-team",
+        "collected_method": "manual_sample_creation",
+        "notes": "Synthetic sample for ingestion MVP"
+      }
+    }
+  },
+  {
+    "source_path": "tokyo_products.json",
+    "loader_hint": "json",
+    "title_field": "name",
+    "text_fields": [
+      "name",
+      "category",
+      "price",
+      "target_segment"
+    ],
+    "tags": [
+      "product",
+      "frozen_food"
+    ],
+    "metadata": {
+      "datasource_id": "tokyo-product-sample-001",
+      "source_name": "Tokyo Product Sample",
+      "source_type": "product_catalog",
+      "source_url": null,
+      "license_type": "internal",
+      "allowed_use": [
+        "research",
+        "prototype"
+      ],
+      "retrieved_at": "2026-06-22T10:00:00Z",
+      "coverage_region": [
+        "tokyo-metropolitan"
+      ],
+      "coverage_time": null,
+      "language": "en",
+      "format": "json",
+      "quality_score": 0.8,
+      "known_biases": [
+        "small sample product set"
+      ],
+      "provenance": {
+        "collected_by": "project-team",
+        "collected_method": "manual_sample_creation",
+        "notes": "Sample product metadata for ingestion MVP"
+      }
+    }
+  },
+  {
+    "source_path": "tokyo_market_notes.md",
+    "loader_hint": "markdown",
+    "tags": [
+      "market_notes",
+      "tokyo"
+    ],
+    "metadata": {
+      "datasource_id": "tokyo-market-note-001",
+      "source_name": "Tokyo Market Notes",
+      "source_type": "market_notes",
+      "source_url": null,
+      "license_type": "internal",
+      "allowed_use": [
+        "research",
+        "prototype"
+      ],
+      "retrieved_at": "2026-06-22T10:00:00Z",
+      "coverage_region": [
+        "tokyo-metropolitan"
+      ],
+      "coverage_time": null,
+      "language": "ja",
+      "format": "md",
+      "quality_score": 0.7,
+      "known_biases": [
+        "qualitative note"
+      ],
+      "provenance": {
+        "collected_by": "project-team",
+        "collected_method": "manual_note",
+        "notes": "Sample markdown note for ingestion MVP"
+      }
+    }
+  },
+  {
+    "source_path": "tokyo_quick_notes.txt",
+    "loader_hint": "text",
+    "tags": [
+      "market_notes",
+      "suburban"
+    ],
+    "metadata": {
+      "datasource_id": "tokyo-quick-note-001",
+      "source_name": "Tokyo Quick Notes",
+      "source_type": "internal_notes",
+      "source_url": null,
+      "license_type": "internal",
+      "allowed_use": [
+        "research",
+        "prototype"
+      ],
+      "retrieved_at": "2026-06-22T10:00:00Z",
+      "coverage_region": [
+        "tokyo-metropolitan"
+      ],
+      "coverage_time": null,
+      "language": "en",
+      "format": "txt",
+      "quality_score": 0.65,
+      "known_biases": [
+        "quick qualitative note"
+      ],
+      "provenance": {
+        "collected_by": "project-team",
+        "collected_method": "manual_note",
+        "notes": "Sample text note for ingestion MVP"
+      }
+    }
+  }
+]

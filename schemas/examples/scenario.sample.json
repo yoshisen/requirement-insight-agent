@@ -1,0 +1,38 @@
+{
+  "scenario_id": "tokyo-supermarket-launch-001",
+  "title": "東京圏スーパー新商品上市評価",
+  "region": [
+    "tokyo-metropolitan"
+  ],
+  "category": [
+    "supermarket",
+    "frozen_food"
+  ],
+  "business_question": "東京圏で新しい高たんぱく低糖質の冷凍惣菜を上市すべきか",
+  "product_or_service": {
+    "name": "Protein Frozen Dish",
+    "description": "高たんぱく・低糖質・時短向け冷凍惣菜",
+    "price_options": [398, 498, 598],
+    "positioning": "healthy_convenient_meal"
+  },
+  "target_agents": {
+    "population_id": "tokyo-mvp-v1",
+    "selection_filters": {},
+    "sample_size": 20
+  },
+  "evaluation_dimensions": [
+    "purchase_intent",
+    "price_sensitivity",
+    "channel_preference",
+    "objections"
+  ],
+  "assumptions": [
+    "東京圏のスーパーで販売する",
+    "初期販促は限定的"
+  ],
+  "metadata": {
+    "created_at": "2026-06-22T10:00:00Z",
+    "created_by": "project-team",
+    "version": "0.1"
+  }
+}
