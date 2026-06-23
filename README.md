@@ -7,112 +7,69 @@
 
 > **会話から要件へ。**
 >
-> Requirement Insight Agent は、公開データ、RAG、population-aligned synthetic consumer agents を組み合わせて、
-> 市場要求の探索、需要仮説の形成、シナリオ評価、意思決定支援を行うための OSS です。
+> Requirement Insight Agent は、公開データや許諾済みデータをもとに synthetic consumer agents を構築し、
+> 商品・価格・訴求・販路・地域条件に対する需要反応を、できる限り現実に近いかたちでシミュレーションするための OSS です。
 
 ## このプロジェクトの核心
 
-Requirement Insight Agent の核心は、**現実にできるだけ近い synthetic consumer agents を構築し、
-商品・価格・訴求・販路・地域条件に対する需要反応をシミュレーションすること** にあります。
+このプロジェクトの一番の価値は、**合成エージェントを使って、現実の市場に近い需要反応を事前に比較できること** にあります。
 
-これは「何が売れるか」を単純に断定する仕組みではなく、
-**どの市場で、どの層が、どの条件で反応しそうか** を比較可能な形で可視化し、
-意思決定者が実調査前に論点整理、仮説比較、施策検討を行うための reference workflow を提供するものです。
+単に「売れる / 売れない」を断定するのではなく、次のような問いに対して、比較しやすいかたちで反応を出します。
 
-この agent は、公開データだけでなく、**適法で、利用許諾があり、監査可能な社内データ、調査メモ、商品情報、地域情報** なども取り込みながら構成できます。
-目標は、実在個人を再構成することではなく、対象市場に整合する synthetic population を作り、
-できる限り現実に近い反応分布を再現して、需要理解と意思決定支援に役立てることです。
+- どの層が反応しそうか
+- どの価格帯で失速しそうか
+- どの訴求が効きやすいか
+- どの販路や地域条件で受け止められ方が変わるか
 
-このプロジェクトが目指しているのは、「何が売れるか」を単純に当てることではなく、
-**どの市場で、どの層に、どの価値提案が、どの条件つきで受け入れられそうか** を、
-構造化された simulation workflow として検討できるようにすることです。
+そのために、公開統計、地域情報、商品情報、調査メモ、社内の許諾済みデータなどを取り込み、
+対象市場にできるだけ整合する synthetic population を作り、その上でシナリオ実行、集約、需要レンジ推定、評価までを一つの流れとして扱います。
 
-市場調査の現場では、最初から十分な実データ、十分なインタビュー対象、十分な予算、十分に磨かれた仮説がそろっているとは限りません。
-Requirement Insight Agent は、そうした初期段階の不確実な問いに対して、
-公開データ、地域情報、カテゴリ知識、retrieval、synthetic consumer agents を組み合わせ、
-**仮説生成、事前比較、論点整理、需要レンジの探索** を支援することを目的にしています。
+このプロジェクトは **実市場調査の代替** ではありません。
+出力はあくまで **仮説生成・比較検討・論点整理・意思決定支援** のための simulation result です。
 
-重要なのは、このプロジェクトが **real market research の代替** ではないことです。
-ここで生成される結果は、forecast や business truth ではなく、
-**grounded but uncertain simulation output** として扱われるべきものです。
-そのため、どの出力にも、できる限り assumptions、citations、uncertainty、explanation trace を残す方針をとっています。
+## まず分かること
 
-## このプロジェクトの目的
+この README を読むと、最低限次のことが分かります。
 
-- 市場要求や潜在ニーズを、定性的な会話と定量寄りの構造出力の両方で探索できるようにする
-- 商品、価格、地域、訴求、チャネルの違いを scenario として比較できるようにする
-- synthetic population を使って、平均的な 1 人の顧客像ではなく、分布としての反応差を扱えるようにする
-- calibration 可能な形で、後から benchmark や real-world data と比較できる実装基盤を作る
-- OSS として、schema、config、ingestion、RAG、runner、aggregation、estimation、evaluation を段階的に拡張できるようにする
+- このプロジェクトが何を目指しているか
+- 何を入力にして synthetic agents を作るのか
+- OpenAI や local mode をどこで設定するのか
+- CLI をどういう順番で実行すればよいか
+- 実行すると何が出力されるのか
+- どこまで実装済みで、どこが未実装か
 
-## 実現方法
+## 目次
 
-現在の実装は、以下の流れで構成されています。
+- [1. 何をするプロジェクトか](#1-何をするプロジェクトか)
+- [2. 現在できること](#2-現在できること)
+- [3. まだ未実装のこと](#3-まだ未実装のこと)
+- [4. どう実現しているか](#4-どう実現しているか)
+- [5. 設定はどこでするか](#5-設定はどこでするか)
+- [6. 最短の使い方](#6-最短の使い方)
+- [7. 実行すると何が出るか](#7-実行すると何が出るか)
+- [8. CLI と API](#8-cli-と-api)
+- [9. 倫理・安全・制約](#9-倫理安全制約)
+- [10. 関連ドキュメント](#10-関連ドキュメント)
 
-1. `ingestion`
-  local の CSV / JSON / Markdown / text と datasource metadata を読み込み、provenance-aware な正規化データへ変換します。
+## 1. 何をするプロジェクトか
 
-2. `RAG`
-  正規化済みデータを chunk 化し、embedding を作り、FAISS 優先の local index に保存します。
-  retrieval 時には region / category / datasource metadata で絞り込み、citation trace を保持します。
+Requirement Insight Agent は、次の流れを OSS として実装することを目標にしています。
 
-3. `synthetic population`
-  weighted config に基づいて、region、household、age band、income band、channel preference、price sensitivity などを持つ synthetic agents を複数生成します。
-  raw traits と derived traits を分けて保持し、将来の calibration をしやすくしています。
+1. 市場理解に使えるデータを取り込む
+2. それを RAG 可能な知識ベースにする
+3. 分布ベースで synthetic consumer agents を生成する
+4. 商品や施策のシナリオを agent に投げる
+5. 応答を集約して、需要や懸念点を整理する
+6. conservative / base / optimistic の range を出す
+7. benchmark と比較して未校正点を明示する
 
-4. `survey / interview runner`
-  scenario、agent profile、grounding context、prompt spec を結びつけて、structured JSON response を返します。
-  local provider でも OpenAI でも、同じ request / response contract を通す構造です。
+対象は冷凍惣菜のような新商品だけに限りません。
+価格施策、販促、棚割り、チャネル、出店仮説、サービス構想など、比較対象をシナリオとして定義できるものであれば拡張できます。
 
-5. `aggregation / scoring`
-  per-agent response をセグメント別・全体で集約し、top reasons、top objections、purchase intent distribution、channel preference summary、uncertainty summary を出します。
-
-6. `demand estimation / inventory suggestion`
-  aggregated output をもとに、conservative / base / optimistic の range を推定し、inventory suggestion を range として返します。
-
-7. `evaluation / calibration`
-  expected distribution や benchmark と比較して、representativeness、stability、evidence coverage、bias risk を確認します。
-
-## 最短の使い方
-
-最短で sample flow を試すなら、次の順で十分です。
-
-1. `ria ingest`
-2. `ria build-index --input data/processed/normalized_records.json --output-dir .local/index/sample`
-3. `ria build-population --config configs/populations/tokyo_mvp_population.json --sample-size 24 --category frozen_food --output agents/sample_profiles/tokyo_mvp_population.sample.json`
-4. `ria run-scenario --scenario examples/tokyo-supermarket-launch/scenario.json --prompt prompts/survey/supermarket-launch-survey-v1.json --population agents/sample_profiles/tokyo_mvp_population.sample.json --index-dir .local/index/sample --agent-limit 5 --output .local/output/scenario_run.json --jsonl-output .local/output/scenario_run.jsonl`
-5. `ria aggregate --run-result .local/output/scenario_run.json --population agents/sample_profiles/tokyo_mvp_population.sample.json --output .local/output/aggregated_output.json --report .local/output/aggregation_report.md`
-6. `ria estimate-demand --aggregation .local/output/aggregated_output.json --base-units 900 --output .local/output/demand_estimation.json --report .local/output/demand_estimation_report.md`
-7. `ria evaluate --population agents/sample_profiles/tokyo_mvp_population.sample.json --aggregation .local/output/aggregated_output.json --benchmark evaluation/benchmarks/tokyo_mvp_expected_distribution.json --output .local/output/evaluation_record.json --report .local/output/evaluation_report.md`
-
-もっと早く end-to-end を確認したい場合は、以下の 1 コマンドで sample workflow をまとめて実行できます。
-
-```bash
-ria run-example \
-  --config examples/tokyo-supermarket-launch/example_config.json \
-  --prompt-kind survey \
-  --agent-limit 5 \
-  --base-units 900 \
-  --output-dir .local/examples/tokyo-supermarket-launch
-```
-
-生成される主な成果物は以下です。
-
-- `normalized_records.json`
-- `scenario_run.json`
-- `aggregated_output.json`
-- `aggregation_report.md`
-- `demand_estimation.json`
-- `demand_estimation_report.md`
-- `evaluation_record.json`
-- `evaluation_report.md`
-
-詳細なコマンドとファイル説明は、この README の下部セクション、および [docs/getting-started.md](docs/getting-started.md) と [docs/runbook.md](docs/runbook.md) にまとめています。
-
-## 現在実装済みの範囲
+## 2. 現在できること
 
 - schema-first な JSON Schema / Pydantic models
-- provider abstraction と local / OpenAI 切替基盤
+- provider abstraction と local / OpenAI の切替
 - local CSV / JSON / Markdown / text ingestion
 - FAISS 優先の local RAG index / retrieval / grounding
 - weighted config ベースの synthetic population generation
@@ -123,34 +80,145 @@ ria run-example \
 - Typer CLI と FastAPI 最小 API
 - 東京圏スーパー新商品上市の sample flow
 
-## まだ未実装の範囲
+## 3. まだ未実装のこと
 
-- 実データ連携を前提にした強い calibration
-- provider ごとの本格的な production 実装（Claude / Gemini）
+- 実データを使った強い calibration
+- Claude / Gemini の本格 provider 実装
+- 実ローカル LLM との接続実装
 - 高度な geospatial reasoning
 - 非同期 job orchestration
 - 本格 UI
-- 継続運用を前提にした benchmark / backtest の蓄積
+- 継続運用向け benchmark / backtest 蓄積
 
-## リポジトリの目的
+## 4. どう実現しているか
 
-このプロジェクトは市場を deterministic に予測するものではありません。
-目標は、以下を構造化された workflow として OSS 化することです。
+現在の MVP は、次のレイヤーで動いています。
 
-- 仮説生成
-- pre-evaluation
-- scenario comparison
-- uncertainty-aware reporting
-- calibration-ready evaluation
+1. `ingestion`
+   local の CSV / JSON / Markdown / text と datasource metadata を読み込み、provenance-aware な正規化データへ変換します。
 
-## インストール方法
+2. `RAG`
+   正規化済みデータを chunk 化し、embedding を作り、FAISS 優先の local index に保存します。region / category / datasource metadata による絞り込みも行います。
 
-### 前提
+3. `synthetic population`
+   weighted config に基づいて、region、household、age band、income band、channel preference、price sensitivity などを持つ synthetic agents を複数生成します。
 
-- Python 3.11+
-- 推奨: virtual environment
+4. `survey / interview runner`
+   scenario、agent profile、grounding context、prompt spec を結びつけて、structured JSON response を返します。
 
-### セットアップ
+5. `aggregation / scoring`
+   per-agent response を集約し、top reasons、top objections、segment summary、uncertainty summary を作ります。
+
+6. `demand estimation / inventory suggestion`
+   aggregated output をもとに、conservative / base / optimistic の range と inventory suggestion を返します。
+
+7. `evaluation / calibration`
+   expected distribution や benchmark と比較し、representativeness、stability、evidence coverage、bias risk を確認します。
+
+## 5. 設定はどこでするか
+
+設定に関係する場所は次の 4 つです。
+
+### 5.1 `.env`
+
+実行時の設定と secret を入れる場所です。
+
+- provider の切替
+- OpenAI API key
+- chat / embedding model の指定
+- timeout や retry
+
+```bash
+cp .env.example .env
+```
+
+主要項目:
+
+- `RIA_MODEL_PROVIDER`
+- `RIA_EMBEDDING_PROVIDER`
+- `RIA_CHAT_MODEL`
+- `RIA_EMBEDDING_MODEL`
+- `OPENAI_API_KEY`
+- `RIA_MODEL_CONFIG_PATH`
+
+### 5.2 `configs/models/`
+
+モデル実行の既定値を置く場所です。
+
+- `default.toml`
+- `openai.toml`
+- `local.toml`
+- `claude.toml`
+- `gemini.toml`
+
+### 5.3 `configs/providers/`
+
+provider ごとの差分設定を置く場所です。
+
+- base URL
+- default model
+- timeout
+- retry
+
+### 5.4 `configs/populations/`
+
+synthetic population の分布設定を置く場所です。
+
+- region weights
+- age band weights
+- household weights
+- income band weights
+- channel preference weights
+- price sensitivity weights
+- category conditioning
+
+## OpenAI の設定方法
+
+OpenAI を使う場合は `.env` に最低限次を設定します。
+
+```env
+RIA_MODEL_PROVIDER=openai
+RIA_EMBEDDING_PROVIDER=openai
+RIA_CHAT_MODEL=gpt-4.1-mini
+RIA_EMBEDDING_MODEL=text-embedding-3-small
+OPENAI_API_KEY=your-key
+```
+
+必要に応じて以下も変更できます。
+
+- `RIA_OPENAI_BASE_URL`
+- `RIA_OPENAI_ORGANIZATION`
+- `RIA_OPENAI_PROJECT`
+
+## local の設定方法
+
+現時点の `local` は **実ローカル大規模モデル接続ではなく、placeholder provider** です。
+つまり、Ollama や vLLM のような実ローカル LLM にまだ直接つながるわけではありません。
+
+現在の `local` は、以下の用途に向いています。
+
+- 配線確認
+- schema 確認
+- pipeline の smoke test
+- artifact の出力確認
+
+設定例:
+
+```env
+RIA_MODEL_PROVIDER=local
+RIA_EMBEDDING_PROVIDER=local
+RIA_CHAT_MODEL=local-placeholder-chat
+RIA_EMBEDDING_MODEL=local-placeholder-embedding
+```
+
+実ローカル LLM をつなぐ場合は、今後 `requirement_insight_agent/core/providers/` に provider 実装を追加する前提です。
+
+## 6. 最短の使い方
+
+### 6.1 まずインストールする
+
+目的:
+実行に必要な Python 環境と依存関係をそろえるためです。
 
 ```bash
 python -m venv .venv
@@ -168,61 +236,28 @@ python -m pip install --upgrade pip
 python -m pip install -e .[dev,rag]
 ```
 
-## `.env` 設定方法
+### 6.2 sample data を取り込む
 
-```bash
-cp .env.example .env
-```
-
-主要設定:
-
-- `RIA_MODEL_PROVIDER`
-- `RIA_EMBEDDING_PROVIDER`
-- `RIA_CHAT_MODEL`
-- `RIA_EMBEDDING_MODEL`
-- `OPENAI_API_KEY`
-- `RIA_MODEL_CONFIG_PATH`
-
-## OpenAI / local model の切替方法
-
-### local placeholder
-
-```env
-RIA_MODEL_PROVIDER=local
-RIA_EMBEDDING_PROVIDER=local
-RIA_CHAT_MODEL=local-placeholder-chat
-RIA_EMBEDDING_MODEL=local-placeholder-embedding
-```
-
-### OpenAI
-
-```env
-RIA_MODEL_PROVIDER=openai
-RIA_EMBEDDING_PROVIDER=openai
-RIA_CHAT_MODEL=gpt-4.1-mini
-RIA_EMBEDDING_MODEL=text-embedding-3-small
-OPENAI_API_KEY=your-key
-```
-
-## sample data の使い方
-
-sample assets は `data/sample/` にあります。
-
-- `tokyo_regions.csv`
-- `tokyo_products.json`
-- `tokyo_market_notes.md`
-- `tokyo_quick_notes.txt`
-- `datasource_manifest.json`
-
-## RAG index 作成方法
+目的:
+RAG や scenario 実行に使う元データを正規化して `data/processed/` に置くためです。
 
 ```bash
 ria ingest
-ria build-index --input data/processed/normalized_records.json --output-dir .local/index/sample
-ria retrieve-test --index-dir .local/index/sample --query-file examples/tokyo-supermarket-launch/retrieval_query.json --output .local/output/retrieval_result.json
 ```
 
-## synthetic population 作成方法
+### 6.3 RAG index を作る
+
+目的:
+取り込んだデータを retrieval 可能にするためです。
+
+```bash
+ria build-index --input data/processed/normalized_records.json --output-dir .local/index/sample
+```
+
+### 6.4 synthetic population を作る
+
+目的:
+simulation の対象になる synthetic agents を複数生成するためです。
 
 ```bash
 ria build-population \
@@ -232,9 +267,10 @@ ria build-population \
   --output agents/sample_profiles/tokyo_mvp_population.sample.json
 ```
 
-## example scenario 実行方法
+### 6.5 scenario を走らせる
 
-### 個別に流す場合
+目的:
+agent に対して survey / interview を実行し、構造化応答を集めるためです。
 
 ```bash
 ria run-scenario \
@@ -245,19 +281,40 @@ ria run-scenario \
   --agent-limit 5 \
   --output .local/output/scenario_run.json \
   --jsonl-output .local/output/scenario_run.jsonl
+```
 
+### 6.6 集約する
+
+目的:
+individual response を、全体およびセグメント別の示唆に変換するためです。
+
+```bash
 ria aggregate \
   --run-result .local/output/scenario_run.json \
   --population agents/sample_profiles/tokyo_mvp_population.sample.json \
   --output .local/output/aggregated_output.json \
   --report .local/output/aggregation_report.md
+```
 
+### 6.7 需要レンジを出す
+
+目的:
+単一予測値ではなく、scenario-based な demand range と inventory suggestion を作るためです。
+
+```bash
 ria estimate-demand \
   --aggregation .local/output/aggregated_output.json \
   --base-units 900 \
   --output .local/output/demand_estimation.json \
   --report .local/output/demand_estimation_report.md
+```
 
+### 6.8 評価する
+
+目的:
+population や aggregated output を benchmark と比較し、未校正点や不安定さを確認するためです。
+
+```bash
 ria evaluate \
   --population agents/sample_profiles/tokyo_mvp_population.sample.json \
   --aggregation .local/output/aggregated_output.json \
@@ -266,7 +323,9 @@ ria evaluate \
   --report .local/output/evaluation_report.md
 ```
 
-### end-to-end sample flow
+### 6.9 まとめて試す
+
+もっと早く全体像を確認したい場合は、以下の 1 コマンドで sample workflow をまとめて実行できます。
 
 ```bash
 ria run-example \
@@ -277,7 +336,10 @@ ria run-example \
   --output-dir .local/examples/tokyo-supermarket-launch
 ```
 
-## 出力の見方
+## 7. 実行すると何が出るか
+
+このプロジェクトの主な出力は **CLI が生成する JSON / JSONL / Markdown** です。
+API を使う場合は、それらに相当する内容を JSON response として受け取ります。
 
 主な成果物:
 
@@ -299,7 +361,25 @@ ria run-example \
 - `demand_estimation.json` は scenario-based range であり、forecast ではない
 - `evaluation_record.json` は current calibration gap を残すための scaffold
 
-## API
+## 8. CLI と API
+
+### CLI
+
+現在の主入口は CLI です。
+
+- `ria status`
+- `ria paths`
+- `ria ingest`
+- `ria build-index`
+- `ria retrieve-test`
+- `ria build-population`
+- `ria run-scenario`
+- `ria aggregate`
+- `ria estimate-demand`
+- `ria evaluate`
+- `ria run-example`
+
+### API
 
 起動:
 
@@ -315,21 +395,7 @@ python -m uvicorn api.app:app --reload
 - `POST /examples/tokyo-supermarket-launch/run`
 - `GET /results/{artifact_name}`
 
-## CLI コマンド一覧
-
-- `ria status`
-- `ria paths`
-- `ria ingest`
-- `ria build-index`
-- `ria retrieve-test`
-- `ria build-population`
-- `ria run-scenario`
-- `ria aggregate`
-- `ria estimate-demand`
-- `ria evaluate`
-- `ria run-example`
-
-## 倫理・安全・非目標
+## 9. 倫理・安全・制約
 
 - synthetic agents は実在人物ではない
 - 実在個人の再構成・模倣・プロファイリングを目的としない
@@ -342,7 +408,7 @@ python -m uvicorn api.app:app --reload
 - [docs/safety.md](docs/safety.md)
 - [docs/data-policy.md](docs/data-policy.md)
 
-## limitation
+### limitation
 
 - local provider は placeholder 実装
 - Claude / Gemini は abstraction のみで本実装は未完了
@@ -350,6 +416,14 @@ python -m uvicorn api.app:app --reload
 - RAG は local index MVP に留まる
 - aggregation / demand estimation は deterministic heuristic ベース
 - report の品質は real-world validation に依存する
+
+## 10. 関連ドキュメント
+
+- [docs/getting-started.md](docs/getting-started.md)
+- [docs/runbook.md](docs/runbook.md)
+- [docs/architecture.md](docs/architecture.md)
+- [docs/schema-spec.md](docs/schema-spec.md)
+- [docs/roadmap.md](docs/roadmap.md)
 
 ## roadmap の更新
 
@@ -365,14 +439,6 @@ python -m uvicorn api.app:app --reload
 2. richer example coverage
 3. provider expansion beyond local / OpenAI
 4. end-to-end CLI polish and error messaging
-
-## 参考ドキュメント
-
-- [docs/getting-started.md](docs/getting-started.md)
-- [docs/runbook.md](docs/runbook.md)
-- [docs/architecture.md](docs/architecture.md)
-- [docs/schema-spec.md](docs/schema-spec.md)
-- [docs/roadmap.md](docs/roadmap.md)
 
 ## License
 
