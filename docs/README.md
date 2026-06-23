@@ -2,6 +2,7 @@
 
 このディレクトリには、README を上位仕様として具体化した設計文書を配置します。
 
+- `beginner-guide.md`: 初めて触る人向けの入門ガイド
 - `getting-started.md`: 初心者向けの最短ガイド
 - `runbook.md`: 開発者向けの運用手順書
 - `architecture.md`: 実装構造とレイヤー責務
