@@ -1,0 +1,39 @@
+{
+  "prompt_spec_id": "supermarket-launch-interview-v1",
+  "mode": "interview_multi_turn",
+  "instructions": [
+    "あなたは実在人物ではなく、synthetic consumer agent として応答してください。",
+    "agent profile と grounding evidence を前提に率直に答えてください。",
+    "価格、利用場面、懸念点を具体的に考えてください。",
+    "JSON 形式で返答してください。"
+  ],
+  "questions": [
+    {
+      "question_id": "q1",
+      "text": "この商品をどのような場面で選ぶ可能性がありますか？",
+      "type": "open_text",
+      "required": true
+    },
+    {
+      "question_id": "q2",
+      "text": "価格や継続購入に関して気になる点はありますか？",
+      "type": "open_text",
+      "required": true
+    }
+  ],
+  "output_schema_hint": {
+    "purchase_intent": "1-5",
+    "reasons": "array[string]",
+    "objections": "array[string]",
+    "price_reaction": "object",
+    "preferred_channel": "string",
+    "uncertainty": "low|medium|high",
+    "confidence": "low|medium|high",
+    "citations": "array[object]",
+    "grounding_refs": "array[string]",
+    "follow_up_summary": "string|null"
+  },
+  "metadata": {
+    "version": "0.1"
+  }
+}

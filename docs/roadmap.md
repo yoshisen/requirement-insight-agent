@@ -5,13 +5,13 @@
 
 ## Current Focus
 
-- Current phase: `Phase 0 -> Phase 1 bridge`
-- Goal: 仕様だけの状態から、最小限の scaffold と schema-first 実装基盤へ移行する
+- Current phase: `Phase 5 -> Phase 6 bridge`
+- Goal: 既存の MVP pipeline を calibration / evaluation / API / docs まで通し、end-to-end の再現可能性を高める
 - Success criteria:
-  - Python プロジェクトとして起動できる
-  - 主要 schema が JSON Schema として存在する
-  - docs / configs / examples / tests の最小配置がある
-  - 安全性とデータ利用ポリシーが明文化されている
+  - sample flow が `ingest -> build-index -> build-population -> run-scenario -> aggregate -> estimate-demand -> evaluate` で通る
+  - local / OpenAI provider の切替方法が明文化されている
+  - minimal API から sample flow を叩ける
+  - README / getting-started / runbook が現実装と整合する
 
 ## Phase 0: Spec / README / Architecture
 
@@ -59,6 +59,6 @@
 
 ## Immediate Next Milestones
 
-1. Pydantic v2 models を `schemas/` と 1:1 で対応させる
-2. scenario 読み込みと schema validation の CLI コマンドを追加する
-3. sample scenario を使った dummy end-to-end execution を追加する
+1. stronger calibration against real survey or benchmark data
+2. provider expansion beyond local / OpenAI placeholder mix
+3. richer scenario coverage and more stable reporting

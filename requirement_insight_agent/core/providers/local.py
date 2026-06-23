@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 
 from requirement_insight_agent.core.config import ResolvedProviderConfig
 
@@ -27,6 +28,22 @@ class LocalPlaceholderProvider(ChatProvider, EmbeddingProvider):
         self.config = config
 
     def complete(self, request: ChatRequest) -> ChatResponse:
+        structured_response = request.metadata.get("structured_response")
+        if structured_response is not None:
+            output_text = json.dumps(structured_response, ensure_ascii=False)
+            choice = ChatChoice(
+                index=0,
+                message=ChatMessage(role="assistant", content=output_text),
+                finish_reason="stop",
+            )
+            return ChatResponse(
+                provider=self.provider_name,
+                model=request.model or self.config.chat_model,
+                output_text=output_text,
+                choices=[choice],
+                metadata={"placeholder": True, "structured": True},
+            )
+
         prompt = next((message.content for message in reversed(request.messages) if message.role == "user"), "")
         output_text = (
             f"{self.config.response_prefix} provider={self.provider_name} model="

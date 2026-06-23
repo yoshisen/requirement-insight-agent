@@ -1,0 +1,3401 @@
+{
+  "population_id": "tokyo-mvp-v1",
+  "generated_at": "2026-06-23T02:44:42.369155Z",
+  "sample_size": 24,
+  "category": "frozen_food",
+  "seed": 42,
+  "records": [
+    {
+      "record_id": "tokyo-mvp-v1-0001",
+      "agent": {
+        "agent_id": "tokyo-agent-0001",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "20s",
+        "household_composition": "single",
+        "life_stage": "early_career",
+        "income_band": "lower_middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "high",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "limited",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0000-raw",
+            "statement": "Raw traits sampled from weighted config for 20s / single",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0000-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0000-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "high",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "high",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.368594Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "20s",
+        "household_composition": "single",
+        "income_band": "lower_middle",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "high",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "early_career",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0000-raw",
+          "statement": "Raw traits sampled from weighted config for 20s / single",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0000-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0000-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0002",
+      "agent": {
+        "agent_id": "tokyo-agent-0002",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "20s",
+        "household_composition": "couple",
+        "life_stage": "early_career",
+        "income_band": "low",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "medium",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0001-raw",
+            "statement": "Raw traits sampled from weighted config for 20s / couple",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0001-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0001-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "high",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.368940Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "20s",
+        "household_composition": "couple",
+        "income_band": "low",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "early_career",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0001-raw",
+          "statement": "Raw traits sampled from weighted config for 20s / couple",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0001-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0001-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0003",
+      "agent": {
+        "agent_id": "tokyo-agent-0003",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "30s",
+        "household_composition": "family_with_children",
+        "life_stage": "child_raising",
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0002-raw",
+            "statement": "Raw traits sampled from weighted config for 30s / family_with_children",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0002-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0002-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "30s",
+        "household_composition": "family_with_children",
+        "income_band": "middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "child_raising",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0002-raw",
+          "statement": "Raw traits sampled from weighted config for 30s / family_with_children",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0002-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0002-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0004",
+      "agent": {
+        "agent_id": "tokyo-agent-0004",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "20s",
+        "household_composition": "family_with_children",
+        "life_stage": "early_career",
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0003-raw",
+            "statement": "Raw traits sampled from weighted config for 20s / family_with_children",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0003-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0003-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "high",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "20s",
+        "household_composition": "family_with_children",
+        "income_band": "middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "early_career",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0003-raw",
+          "statement": "Raw traits sampled from weighted config for 20s / family_with_children",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0003-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0003-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0005",
+      "agent": {
+        "agent_id": "tokyo-agent-0005",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "30s",
+        "household_composition": "single",
+        "life_stage": null,
+        "income_band": "low",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "limited",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0004-raw",
+            "statement": "Raw traits sampled from weighted config for 30s / single",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0004-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0004-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "high",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "30s",
+        "household_composition": "single",
+        "income_band": "low",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0004-raw",
+          "statement": "Raw traits sampled from weighted config for 30s / single",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0004-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0004-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0006",
+      "agent": {
+        "agent_id": "tokyo-agent-0006",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "50s",
+        "household_composition": "family_with_children",
+        "life_stage": null,
+        "income_band": "high",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "high",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0005-raw",
+            "statement": "Raw traits sampled from weighted config for 50s / family_with_children",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0005-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0005-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "50s",
+        "household_composition": "family_with_children",
+        "income_band": "high",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "high",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0005-raw",
+          "statement": "Raw traits sampled from weighted config for 50s / family_with_children",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0005-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0005-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0007",
+      "agent": {
+        "agent_id": "tokyo-agent-0007",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "40s",
+        "household_composition": "elderly_household",
+        "life_stage": null,
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "low",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "relaxed",
+          "time_constraints": "medium",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0006-raw",
+            "statement": "Raw traits sampled from weighted config for 40s / elderly_household",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0006-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0006-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "cautious"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "40s",
+        "household_composition": "elderly_household",
+        "income_band": "middle",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "low",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0006-raw",
+          "statement": "Raw traits sampled from weighted config for 40s / elderly_household",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0006-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0006-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0008",
+      "agent": {
+        "agent_id": "tokyo-agent-0008",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "30s",
+        "household_composition": "single",
+        "life_stage": null,
+        "income_band": "lower_middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "limited",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0007-raw",
+            "statement": "Raw traits sampled from weighted config for 30s / single",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0007-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0007-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "high",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "30s",
+        "household_composition": "single",
+        "income_band": "lower_middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0007-raw",
+          "statement": "Raw traits sampled from weighted config for 30s / single",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0007-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0007-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0009",
+      "agent": {
+        "agent_id": "tokyo-agent-0009",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "30s",
+        "household_composition": "couple",
+        "life_stage": null,
+        "income_band": "lower_middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "medium",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0008-raw",
+            "statement": "Raw traits sampled from weighted config for 30s / couple",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0008-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0008-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "30s",
+        "household_composition": "couple",
+        "income_band": "lower_middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0008-raw",
+          "statement": "Raw traits sampled from weighted config for 30s / couple",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0008-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0008-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0010",
+      "agent": {
+        "agent_id": "tokyo-agent-0010",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "40s",
+        "household_composition": "single",
+        "life_stage": null,
+        "income_band": "upper_middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "limited",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0009-raw",
+            "statement": "Raw traits sampled from weighted config for 40s / single",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0009-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0009-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "high",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "40s",
+        "household_composition": "single",
+        "income_band": "upper_middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0009-raw",
+          "statement": "Raw traits sampled from weighted config for 40s / single",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0009-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0009-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0011",
+      "agent": {
+        "agent_id": "tokyo-agent-0011",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "40s",
+        "household_composition": "family_with_children",
+        "life_stage": null,
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "high",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0010-raw",
+            "statement": "Raw traits sampled from weighted config for 40s / family_with_children",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0010-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0010-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "40s",
+        "household_composition": "family_with_children",
+        "income_band": "middle",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "high",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0010-raw",
+          "statement": "Raw traits sampled from weighted config for 40s / family_with_children",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0010-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0010-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0012",
+      "agent": {
+        "agent_id": "tokyo-agent-0012",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "20s",
+        "household_composition": "single",
+        "life_stage": "early_career",
+        "income_band": "lower_middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "limited",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0011-raw",
+            "statement": "Raw traits sampled from weighted config for 20s / single",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0011-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0011-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "high",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "high",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "20s",
+        "household_composition": "single",
+        "income_band": "lower_middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "early_career",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0011-raw",
+          "statement": "Raw traits sampled from weighted config for 20s / single",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0011-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0011-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0013",
+      "agent": {
+        "agent_id": "tokyo-agent-0013",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "30s",
+        "household_composition": "family_with_children",
+        "life_stage": "child_raising",
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0012-raw",
+            "statement": "Raw traits sampled from weighted config for 30s / family_with_children",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0012-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0012-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "30s",
+        "household_composition": "family_with_children",
+        "income_band": "middle",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "child_raising",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0012-raw",
+          "statement": "Raw traits sampled from weighted config for 30s / family_with_children",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0012-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0012-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0014",
+      "agent": {
+        "agent_id": "tokyo-agent-0014",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "30s",
+        "household_composition": "family_with_children",
+        "life_stage": "child_raising",
+        "income_band": "lower_middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "high",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0013-raw",
+            "statement": "Raw traits sampled from weighted config for 30s / family_with_children",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0013-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0013-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "30s",
+        "household_composition": "family_with_children",
+        "income_band": "lower_middle",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "high",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "child_raising",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0013-raw",
+          "statement": "Raw traits sampled from weighted config for 30s / family_with_children",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0013-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0013-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0015",
+      "agent": {
+        "agent_id": "tokyo-agent-0015",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "30s",
+        "household_composition": "elderly_household",
+        "life_stage": null,
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "low",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "relaxed",
+          "time_constraints": "medium",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0014-raw",
+            "statement": "Raw traits sampled from weighted config for 30s / elderly_household",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0014-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0014-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "cautious"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "30s",
+        "household_composition": "elderly_household",
+        "income_band": "middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "low",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0014-raw",
+          "statement": "Raw traits sampled from weighted config for 30s / elderly_household",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0014-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0014-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0016",
+      "agent": {
+        "agent_id": "tokyo-agent-0016",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "40s",
+        "household_composition": "family_with_children",
+        "life_stage": null,
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0015-raw",
+            "statement": "Raw traits sampled from weighted config for 40s / family_with_children",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0015-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0015-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "40s",
+        "household_composition": "family_with_children",
+        "income_band": "middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0015-raw",
+          "statement": "Raw traits sampled from weighted config for 40s / family_with_children",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0015-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0015-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0017",
+      "agent": {
+        "agent_id": "tokyo-agent-0017",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "40s",
+        "household_composition": "elderly_household",
+        "life_stage": null,
+        "income_band": "upper_middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "medium",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0016-raw",
+            "statement": "Raw traits sampled from weighted config for 40s / elderly_household",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0016-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0016-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "cautious"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "40s",
+        "household_composition": "elderly_household",
+        "income_band": "upper_middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0016-raw",
+          "statement": "Raw traits sampled from weighted config for 40s / elderly_household",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0016-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0016-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0018",
+      "agent": {
+        "agent_id": "tokyo-agent-0018",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "40s",
+        "household_composition": "single",
+        "life_stage": null,
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "limited",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0017-raw",
+            "statement": "Raw traits sampled from weighted config for 40s / single",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0017-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0017-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "high",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "40s",
+        "household_composition": "single",
+        "income_band": "middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0017-raw",
+          "statement": "Raw traits sampled from weighted config for 40s / single",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0017-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0017-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0019",
+      "agent": {
+        "agent_id": "tokyo-agent-0019",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "60_plus",
+        "household_composition": "elderly_household",
+        "life_stage": "post_retirement",
+        "income_band": "lower_middle",
+        "occupation_style": "retired",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "online_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "high",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "medium",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0018-raw",
+            "statement": "Raw traits sampled from weighted config for 60_plus / elderly_household",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0018-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0018-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "cautious"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "60_plus",
+        "household_composition": "elderly_household",
+        "income_band": "lower_middle",
+        "channel_preference": "online_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "post_retirement",
+        "occupation_style": "retired",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "high",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0018-raw",
+          "statement": "Raw traits sampled from weighted config for 60_plus / elderly_household",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0018-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0018-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0020",
+      "agent": {
+        "agent_id": "tokyo-agent-0020",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "50s",
+        "household_composition": "single",
+        "life_stage": null,
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "high",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "limited",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0019-raw",
+            "statement": "Raw traits sampled from weighted config for 50s / single",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0019-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0019-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "high",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "50s",
+        "household_composition": "single",
+        "income_band": "middle",
+        "channel_preference": "hybrid",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "high",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0019-raw",
+          "statement": "Raw traits sampled from weighted config for 50s / single",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0019-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0019-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0021",
+      "agent": {
+        "agent_id": "tokyo-agent-0021",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "40s",
+        "household_composition": "family_with_children",
+        "life_stage": null,
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0020-raw",
+            "statement": "Raw traits sampled from weighted config for 40s / family_with_children",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0020-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0020-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "40s",
+        "household_composition": "family_with_children",
+        "income_band": "middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "medium",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": null,
+        "occupation_style": "office_worker",
+        "mobility_pattern": "hybrid",
+        "shopping_mission_types": [
+          "planned_purchase",
+          "bulk_buying"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0020-raw",
+          "statement": "Raw traits sampled from weighted config for 40s / family_with_children",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0020-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0020-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0022",
+      "agent": {
+        "agent_id": "tokyo-agent-0022",
+        "region": "tokyo-metropolitan",
+        "catchment_area": null,
+        "age_band": "60_plus",
+        "household_composition": "elderly_household",
+        "life_stage": "post_retirement",
+        "income_band": "upper_middle",
+        "occupation_style": "retired",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "low",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "high",
+        "constraints": {
+          "budget_constraints": "relaxed",
+          "time_constraints": "medium",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-metropolitan"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0021-raw",
+            "statement": "Raw traits sampled from weighted config for 60_plus / elderly_household",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0021-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0021-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "cautious"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-metropolitan",
+        "age_band": "60_plus",
+        "household_composition": "elderly_household",
+        "income_band": "upper_middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "low",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "post_retirement",
+        "occupation_style": "retired",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "high",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0021-raw",
+          "statement": "Raw traits sampled from weighted config for 60_plus / elderly_household",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0021-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0021-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0023",
+      "agent": {
+        "agent_id": "tokyo-agent-0023",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "60_plus",
+        "household_composition": "single",
+        "life_stage": "post_retirement",
+        "income_band": "middle",
+        "occupation_style": "retired",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "medium",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "high",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "high",
+          "storage_constraints": "limited",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0022-raw",
+            "statement": "Raw traits sampled from weighted config for 60_plus / single",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0022-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0022-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "medium",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "high",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "60_plus",
+        "household_composition": "single",
+        "income_band": "middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "post_retirement",
+        "occupation_style": "retired",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "daily_restock",
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "high",
+        "digital_literacy": "medium",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0022-raw",
+          "statement": "Raw traits sampled from weighted config for 60_plus / single",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0022-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0022-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    },
+    {
+      "record_id": "tokyo-mvp-v1-0024",
+      "agent": {
+        "agent_id": "tokyo-agent-0024",
+        "region": "tokyo-west-suburban",
+        "catchment_area": null,
+        "age_band": "20s",
+        "household_composition": "couple",
+        "life_stage": "early_career",
+        "income_band": "middle",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "category_aversions": [],
+        "brand_loyalty_tendency": null,
+        "novelty_seeking": null,
+        "basket_size_tendency": null,
+        "impulse_purchase_tendency": null,
+        "planning_tendency": null,
+        "digital_literacy": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "convenience_orientation": "high",
+        "risk_aversion": "medium",
+        "constraints": {
+          "budget_constraints": "moderate",
+          "time_constraints": "medium",
+          "storage_constraints": "moderate",
+          "access_constraints": "rail_access",
+          "local_competition_context": "tokyo-west-suburban"
+        },
+        "rationale_memory": [
+          {
+            "memory_id": "mem-0023-raw",
+            "statement": "Raw traits sampled from weighted config for 20s / couple",
+            "source": "population_config",
+            "confidence": "high"
+          },
+          {
+            "memory_id": "mem-0023-category",
+            "statement": "Category conditioning applied for frozen_food",
+            "source": "category_conditioning",
+            "confidence": "medium"
+          },
+          {
+            "memory_id": "mem-0023-derived",
+            "statement": "Derived traits emphasize frozen_food, quick_meal",
+            "source": "trait_derivation",
+            "confidence": "medium"
+          }
+        ],
+        "grounding_context_refs": [],
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ],
+        "uncertainty_profile": {
+          "profile_confidence": "medium",
+          "preference_uncertainty": "high",
+          "category_familiarity": "high"
+        },
+        "response_style": {
+          "verbosity": "medium",
+          "directness": "medium",
+          "confidence_expression": "balanced"
+        },
+        "metadata": {
+          "generated_at": "2026-06-23T02:44:42.369155Z",
+          "generator_version": "0.1.0",
+          "population_config_id": "tokyo-mvp-v1",
+          "seed": 42,
+          "synthetic_profile": true,
+          "notes": "category=frozen_food"
+        }
+      },
+      "raw_traits": {
+        "region": "tokyo-west-suburban",
+        "age_band": "20s",
+        "household_composition": "couple",
+        "income_band": "middle",
+        "channel_preference": "offline_first",
+        "price_sensitivity": "high",
+        "requested_category": "frozen_food"
+      },
+      "derived_traits": {
+        "life_stage": "early_career",
+        "occupation_style": "office_worker",
+        "mobility_pattern": "public_transport",
+        "shopping_mission_types": [
+          "planned_purchase"
+        ],
+        "category_preferences": [
+          "frozen_food",
+          "quick_meal",
+          "weekday_dinner",
+          "healthy_food"
+        ],
+        "convenience_orientation": "high",
+        "health_orientation": "medium",
+        "eco_orientation": "low",
+        "risk_aversion": "medium",
+        "digital_literacy": "high",
+        "worldview_tags": [
+          "time_saving",
+          "weekday_meal_support",
+          "frozen_food"
+        ]
+      },
+      "explanation_trace": [
+        {
+          "memory_id": "mem-0023-raw",
+          "statement": "Raw traits sampled from weighted config for 20s / couple",
+          "source": "population_config",
+          "confidence": "high"
+        },
+        {
+          "memory_id": "mem-0023-category",
+          "statement": "Category conditioning applied for frozen_food",
+          "source": "category_conditioning",
+          "confidence": "medium"
+        },
+        {
+          "memory_id": "mem-0023-derived",
+          "statement": "Derived traits emphasize frozen_food, quick_meal",
+          "source": "trait_derivation",
+          "confidence": "medium"
+        }
+      ]
+    }
+  ]
+}

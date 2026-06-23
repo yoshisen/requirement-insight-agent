@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from datetime import datetime
 
-from pydantic import BaseModel, ConfigDict, Field, model_validator, field_validator
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field, model_validator, field_validator
 
 from agents.models import ConfidenceLevel
 from rag.models import CitationTrace
@@ -54,7 +54,7 @@ class ScenarioMetadata(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     created_at: datetime
-    created_by: str
+    created_by: str = Field(validation_alias=AliasChoices("created_by", "author"))
     version: str
 
 
@@ -83,6 +83,105 @@ class ScenarioDefinition(BaseModel):
         if not value:
             raise ValueError("list field must contain at least one item")
         return value
+
+
+class PromptQuestionSpec(BaseModel):
+    """One survey or interview question used by the orchestration layer."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    question_id: str
+    text: str
+    type: str
+    required: bool
+    scale: dict[str, object] | None = None
+    choices: list[str] | None = None
+
+
+class PromptSpecMetadata(BaseModel):
+    """Version and bookkeeping metadata for prompt specs."""
+
+    model_config = ConfigDict(extra="allow")
+
+    version: str
+
+
+class PromptSpec(BaseModel):
+    """Prompt specification used for survey and interview execution."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    prompt_spec_id: str
+    mode: str
+    instructions: list[str]
+    questions: list[PromptQuestionSpec]
+    output_schema_hint: dict[str, object]
+    metadata: PromptSpecMetadata
+
+    @field_validator("instructions", "questions")
+    @classmethod
+    def validate_non_empty_lists(cls, value: list[object]) -> list[object]:
+        if not value:
+            raise ValueError("prompt spec lists must not be empty")
+        return value
+
+
+class PriceReaction(BaseModel):
+    """Structured price reaction summary for one synthetic agent response."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    acceptable_price: float | None = None
+    reaction_by_price_option: dict[str, str] = Field(default_factory=dict)
+
+
+class AgentResponseMetadata(BaseModel):
+    """Execution metadata for one structured agent response."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    provider_name: str
+    provider_model: str
+    prompt_spec_id: str
+    attempt_count: int
+    mode: str
+    generated_at: datetime
+
+
+class AgentResponseRecord(BaseModel):
+    """Structured result returned by one survey or interview execution."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    response_id: str
+    scenario_id: str
+    agent_id: str
+    purchase_intent: int = Field(ge=1, le=5)
+    reasons: list[str] = Field(default_factory=list)
+    objections: list[str] = Field(default_factory=list)
+    price_reaction: PriceReaction
+    preferred_channel: str
+    uncertainty: ConfidenceLevel
+    confidence: ConfidenceLevel
+    citations: list[CitationTrace] = Field(default_factory=list)
+    grounding_refs: list[str] = Field(default_factory=list)
+    explanation_trace: list[ExplanationTraceStep] = Field(default_factory=list)
+    follow_up_summary: str | None = None
+    metadata: AgentResponseMetadata
+
+
+class ScenarioRunResult(BaseModel):
+    """Serializable bundle for one scenario run over a set of synthetic agents."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    run_id: str
+    scenario_id: str
+    prompt_spec_id: str
+    mode: str
+    response_count: int
+    responses: list[AgentResponseRecord]
+    metadata: dict[str, object] = Field(default_factory=dict)
 
 
 class AggregationSummary(BaseModel):

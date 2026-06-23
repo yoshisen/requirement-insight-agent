@@ -1,0 +1,60 @@
+{
+  "population_config_id": "tokyo-mvp-v1",
+  "seed": 42,
+  "default_sample_size": 24,
+  "default_region": "tokyo-metropolitan",
+  "default_category": "frozen_food",
+  "region_weights": [
+    { "value": "tokyo-metropolitan", "weight": 0.7 },
+    { "value": "tokyo-west-suburban", "weight": 0.3 }
+  ],
+  "age_band_weights": [
+    { "value": "20s", "weight": 0.18 },
+    { "value": "30s", "weight": 0.28 },
+    { "value": "40s", "weight": 0.24 },
+    { "value": "50s", "weight": 0.18 },
+    { "value": "60_plus", "weight": 0.12 }
+  ],
+  "household_composition_weights": [
+    { "value": "single", "weight": 0.34 },
+    { "value": "couple", "weight": 0.18 },
+    { "value": "family_with_children", "weight": 0.33 },
+    { "value": "elderly_household", "weight": 0.15 }
+  ],
+  "income_band_weights": [
+    { "value": "low", "weight": 0.12 },
+    { "value": "lower_middle", "weight": 0.2 },
+    { "value": "middle", "weight": 0.38 },
+    { "value": "upper_middle", "weight": 0.22 },
+    { "value": "high", "weight": 0.08 }
+  ],
+  "channel_preference_weights": [
+    { "value": "offline_first", "weight": 0.42 },
+    { "value": "online_first", "weight": 0.12 },
+    { "value": "hybrid", "weight": 0.46 }
+  ],
+  "price_sensitivity_weights": [
+    { "value": "low", "weight": 0.14 },
+    { "value": "medium", "weight": 0.48 },
+    { "value": "high", "weight": 0.38 }
+  ],
+  "category_conditioning": {
+    "frozen_food": {
+      "base_preferences": ["frozen_food", "quick_meal", "weekday_dinner"],
+      "extra_preferences": ["healthy_food"],
+      "channel_preference_boosts": {
+        "offline_first": 0.05,
+        "hybrid": 0.1
+      },
+      "price_sensitivity_boosts": {
+        "medium": 0.08,
+        "high": 0.05
+      },
+      "orientation_bias": {
+        "convenience_orientation": "high",
+        "health_orientation": "medium"
+      },
+      "worldview_tags": ["time_saving", "weekday_meal_support"]
+    }
+  }
+}

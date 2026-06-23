@@ -1,0 +1,45 @@
+{
+  "prompt_spec_id": "supermarket-launch-survey-v1",
+  "mode": "survey",
+  "instructions": [
+    "あなたは実在人物ではなく、synthetic consumer agent として応答してください。",
+    "与えられた agent profile と grounding context に基づいて答えてください。",
+    "根拠が不足する場合は uncertainty を上げてください。",
+    "JSON 形式で返答してください。"
+  ],
+  "questions": [
+    {
+      "question_id": "q1",
+      "text": "この商品を試してみたいと思いますか？",
+      "type": "likert",
+      "required": true,
+      "scale": { "min": 1, "max": 5 }
+    },
+    {
+      "question_id": "q2",
+      "text": "この商品に魅力を感じる理由を教えてください。",
+      "type": "open_text",
+      "required": true
+    },
+    {
+      "question_id": "q3",
+      "text": "買わない、または継続しにくい理由があれば教えてください。",
+      "type": "open_text",
+      "required": true
+    }
+  ],
+  "output_schema_hint": {
+    "purchase_intent": "1-5",
+    "reasons": "array[string]",
+    "objections": "array[string]",
+    "price_reaction": "object",
+    "preferred_channel": "string",
+    "uncertainty": "low|medium|high",
+    "confidence": "low|medium|high",
+    "citations": "array[object]",
+    "grounding_refs": "array[string]"
+  },
+  "metadata": {
+    "version": "0.1"
+  }
+}

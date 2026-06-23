@@ -13,9 +13,12 @@ authors = [
   { name = "Requirement Insight Agent Contributors" }
 ]
 dependencies = [
+  "fastapi>=0.115,<1.0",
   "numpy>=1.26,<3.0",
   "pydantic>=2.8,<3.0",
-  "pydantic-settings>=2.3,<3.0"
+  "pydantic-settings>=2.3,<3.0",
+  "typer>=0.12,<1.0",
+  "uvicorn>=0.30,<1.0"
 ]
 
 [project.optional-dependencies]
@@ -23,13 +26,14 @@ rag = [
   "faiss-cpu>=1.8,<2.0"
 ]
 dev = [
+  "httpx>=0.27,<1.0",
   "jsonschema>=4.23,<5.0",
   "pytest>=8.2,<9.0",
   "ruff>=0.5,<1.0"
 ]
 
 [project.scripts]
-ria = "requirement_insight_agent.cli:main"
+ria = "requirement_insight_agent.main:main"
 
 [tool.pytest.ini_options]
 addopts = "-q"

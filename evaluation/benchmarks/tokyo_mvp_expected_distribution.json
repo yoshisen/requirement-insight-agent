@@ -1,0 +1,44 @@
+{
+  "benchmark_id": "tokyo-mvp-expected-v1",
+  "population_config_id": "tokyo-mvp-v1",
+  "dimensions": {
+    "region": {
+      "tokyo-metropolitan": 0.7,
+      "tokyo-west-suburban": 0.3
+    },
+    "age_band": {
+      "20s": 0.18,
+      "30s": 0.28,
+      "40s": 0.24,
+      "50s": 0.18,
+      "60_plus": 0.12
+    },
+    "household_composition": {
+      "single": 0.34,
+      "couple": 0.18,
+      "family_with_children": 0.33,
+      "elderly_household": 0.15
+    },
+    "income_band": {
+      "low": 0.12,
+      "lower_middle": 0.2,
+      "middle": 0.38,
+      "upper_middle": 0.22,
+      "high": 0.08
+    },
+    "channel_preference": {
+      "offline_first": 0.42,
+      "online_first": 0.12,
+      "hybrid": 0.46
+    },
+    "price_sensitivity": {
+      "low": 0.14,
+      "medium": 0.48,
+      "high": 0.38
+    }
+  },
+  "notes": [
+    "Illustrative benchmark aligned with the MVP population config.",
+    "Replace with stronger regional benchmarks when real reference data is available."
+  ]
+}

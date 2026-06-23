@@ -1,0 +1,12 @@
+{
+  "example_id": "tokyo-supermarket-launch",
+  "manifest_path": "data/sample/datasource_manifest.json",
+  "source_root": "data/sample",
+  "scenario_path": "examples/tokyo-supermarket-launch/scenario.json",
+  "survey_prompt_path": "prompts/survey/supermarket-launch-survey-v1.json",
+  "interview_prompt_path": "prompts/interview/supermarket-launch-interview-v1.json",
+  "population_config_path": "configs/populations/tokyo_mvp_population.json",
+  "benchmark_path": "evaluation/benchmarks/tokyo_mvp_expected_distribution.json",
+  "default_agent_limit": 5,
+  "default_base_units": 900
+}
