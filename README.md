@@ -419,6 +419,7 @@ python -m uvicorn api.app:app --reload
 
 ## 10. 関連ドキュメント
 
+- [docs/beginner-guide.md](docs/beginner-guide.md)
 - [docs/getting-started.md](docs/getting-started.md)
 - [docs/runbook.md](docs/runbook.md)
 - [docs/architecture.md](docs/architecture.md)
